@@ -1,15 +1,16 @@
-package Ecotool2021;
+package Ecotool2026;
+
 
 import Ecotool.*;
+import Ecotool2021.*;
 
-
-public class Pedaggio2021 {
+public class Pedaggio2026 {
 	protected Casello caselloin;
 	protected Casello caselloout;
 	protected Veicolo2021 veicolo;
 
 	
-	public Pedaggio2021(Casello caselloin, Casello caselloout, Veicolo2021 veicolo) {
+	public Pedaggio2026(Casello caselloin, Casello caselloout, Veicolo2021 veicolo) {
 		this.caselloin = caselloin;
 		this.caselloout = caselloout;
 		this.veicolo= veicolo;
@@ -77,20 +78,10 @@ public class Pedaggio2021 {
 		//else vuoto dovuto al caso in cui i due caselli sono su due autostrade diverse
 		
 		//la tariffa viene maggiorata in base alla classe e alla classe Euro
-		//prevista però solo per i veicoli pesanti ed ai grandi furgoni per il trasporto merci(Scritto sulla traccia)
-		//classi M3,N2,N3
-		switch(veicolo.getCategoria()) {
-		case "M3":	
-			tariffa *= maggiorazioneclasseEuro;
-			break;
-		case "N2":	
-			tariffa *= maggiorazioneclasseEuro;
-			break;
-		case "N3":	
-			tariffa *= maggiorazioneclasseEuro;
-			break;
-		}	
-			
+		
+		// e viene applicata a tutti i veicoli
+		
+		tariffa *= maggiorazioneclasseEuro;
 		tariffa *= maggiorazioneclasse;
 		
 		//calcolo il pedaggio in fuzione dei km percorsi e la tariffa maggiorata

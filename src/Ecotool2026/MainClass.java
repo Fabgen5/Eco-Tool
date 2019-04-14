@@ -1,7 +1,7 @@
-package Ecotool2021;
+package Ecotool2026;
 
 import Ecotool.*;
-
+import Ecotool2021.*;
 
 public class MainClass {
 
@@ -46,37 +46,38 @@ public class MainClass {
 		
 		
 		//Calcolo del pedaggio dei veicoli relativi allo stesso casello per testare la maggiorazione
-		System.out.println("Test Maggiorazione dal 2021 con lo stesso veicolo ");
+		System.out.println("Test Maggiorazione dal 2026 con lo stesso veicolo ");
 		System.out.println(new Pedaggio(C1,C2,v6).CalcolaPedaggio());
 		System.out.println(new Pedaggio2021(C1,C2,v6).CalcolaPedaggio());
+		System.out.println(new Pedaggio2026(C1,C2,v6).CalcolaPedaggio());
 		System.out.println("La tariffa non aumenta perchè il veicolo nonostante è soggetto alla riforma è a emissioni 0");
 		System.out.println("--------------------");
 		
-		System.out.println("Test Maggiorazione dal 2021 con lo stesso veicolo ");
+		System.out.println("Test Maggiorazione dal 2026 con lo stesso veicolo ");
 		System.out.println(new Pedaggio(C1,C2,v2).CalcolaPedaggio());
 		System.out.println(new Pedaggio2021(C1,C2,v2).CalcolaPedaggio());
-		System.out.println("La tariffa non aumenta perchè il veicolo NON è soggetto alla riforma essendo M2");
+		System.out.println(new Pedaggio2026(C1,C2,v2).CalcolaPedaggio());
+		System.out.println("La tariffa aumenta perchè il veicolo è soggetto alla riforma del 2026 essendo M2");
 		System.out.println("--------------------");
 		
-		System.out.println("Test Maggiorazione dal 2021 con lo stesso veicolo ");
+		System.out.println("Test Maggiorazione dal 2026 con lo stesso veicolo ");
 		System.out.println(new Pedaggio(C1,C2,v3).CalcolaPedaggio());
 		System.out.println(new Pedaggio2021(C1,C2,v3).CalcolaPedaggio());
-		System.out.println("La tariffa aumenta perhcè il veicolo è soggetto alla riforma essendo M3");
+		System.out.println(new Pedaggio2026(C1,C2,v3).CalcolaPedaggio());
+		System.out.println("La tariffa aumenta perhcè il veicolo è soggetto alla riforma sin dal 2021 essendo M3");
 		System.out.println("--------------------");
 		
 		//Stesso veicolo senso opposto
-		System.out.println("Test 2021 stessa tratta senso opposto");
-		System.out.println(new Pedaggio2021(C10,C13,v5).CalcolaPedaggio());
-		System.out.println(new Pedaggio2021(C13,C10,v5).CalcolaPedaggio());
+		System.out.println("Test 2026 stessa tratta senso opposto");
+		System.out.println(new Pedaggio2026(C10,C13,v5).CalcolaPedaggio());
+		System.out.println(new Pedaggio2026(C13,C10,v5).CalcolaPedaggio());
+		System.out.println("--------------------");
+		//Stesso tratta più veicoli
+		System.out.println("Test 2021 stessa tratta più veicoli");
+		System.out.println(new Pedaggio2026(C10,C13,v1).CalcolaPedaggio());
+		System.out.println(new Pedaggio2026(C13,C10,v4).CalcolaPedaggio());
 		System.out.println("--------------------");
 		
-		//Altre prove
-		System.out.println("Altri pedaggi 2021");
-		System.out.println(new Pedaggio2021(C10,C11,v1).CalcolaPedaggio());
-		System.out.println(new Pedaggio2021(C11,C13,v4).CalcolaPedaggio());
-		System.out.println(new Pedaggio2021(C10,C12,v4).CalcolaPedaggio());
-		System.out.println(new Pedaggio2021(C13,C11,v5).CalcolaPedaggio());
-		System.out.println("--------------------");
-	}
 
+}
 }

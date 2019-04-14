@@ -4,6 +4,23 @@ import Ecotool.Veicolo;
 public class Veicolo2021 extends Veicolo{
 	
 	private double emissioneCO2;//Espressa in Milligrammi 
+		
+		/*1. Categorie “M”: Veicoli a motore progettati e costruiti per il trasporto di persone ed aventi
+		almeno quattro ruote.
+		Categoria M1: Veicoli progettati e costruiti per il trasporto di persone, aventi al massimo otto posti
+		a sedere oltre al sedile del conducente.
+		Categoria M2: Veicoli progettati e costruiti per il trasporto di persone, aventi più di otto posti a
+		sedere oltre al sedile del conducente e massa massima non superiore a 5 t.
+		Categoria M3: Veicoli progettati e costruiti per il trasporto di persone, aventi più di otto posti a
+		sedere oltre al sedile del conducente e massa massima superiore a 5 t.
+		2. Categorie “N”: Veicoli a motore progettati e costruiti per il trasporto di merci ed aventi
+		almeno quattro ruote.
+		Categoria N1: Veicoli progettati e costruiti per il trasporto di merci, aventi massa massima non
+		superiore a 3,5 t.
+		Categoria N2: Veicoli progettati e costruiti per il trasporto di merci, aventi massa massima
+		superiore a 3,5 t ma non superiore a 12 t.
+		Categoria N3: Veicoli progettati e costruiti per il trasporto di merci, aventi massa massima
+		superiore a 12 t. */
 	private String categoria;
 	
 	public Veicolo2021(String modello, String marca, int anno, String targa, double altezza, int numeroassi,
@@ -34,13 +51,6 @@ public class Veicolo2021 extends Veicolo{
 	
 	public int getClasseEuro() {
 					
-			switch(categoria) {
-			case "Elettrico":	
-				return 6;
-			case "Ibrido":
-				return 6;
-				
-			default:
 				if(emissioneCO2<100) return 6;
 				if(emissioneCO2<200) return 5;
 				if(emissioneCO2<300) return 4;
@@ -49,7 +59,7 @@ public class Veicolo2021 extends Veicolo{
 				if(emissioneCO2<600) return 1;
 				else return 0;
 				
-			}
+			
 			
 		}
 
